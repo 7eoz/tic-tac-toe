@@ -1,15 +1,8 @@
 import React, {useState} from 'react';
 import './index.css';
 
-<<<<<<< HEAD
 function Board() {
     const [clickedSquares, setClickedSquares] = useState(Array(9).fill(null))
-=======
-<<<<<<< HEAD
-function Game() {
-	const [squares, setSquares] = useState(Array(9).fill(null))
-	const [history, setHistory] = useState(useState(Array(9).fill(null)))
->>>>>>> 09289043608d0f11068890f7d1f93cff90b9bff1
 	const [xIsNext, setXIsNext] = useState(true)
 	const [moves, setMoves] = useState(0)
 
@@ -65,92 +58,6 @@ function Game() {
 	let status = winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`
 	if(!winner && moves === 9) status = 'Draw'
 
-<<<<<<< HEAD
-=======
-
-
-	function Board(props) {
-
-		const handleClick = (i) => {
-			//Makes a copy of the board in order to maintain immutability
-			const square = squares.slice()
-			setHistory(...history, squares)
-			//Checks if the game is over or if the square is already filled
-			if( winner || square[i] ) return
-	
-			square[i] = xIsNext ? 'X' : 'O'
-			setMoves(prevMoves => prevMoves + 1)
-			setSquares(square)
-			setXIsNext(!xIsNext)
-		}
-
-		const renderSquare = (i) => {
-			return ( 
-			<Square 
-			value={props.squares[i]}
-			onClick={() => props.handleClick(i)}/>
-			)
-		};
-
-		const Square = (props) => {
-			return (
-			<button className='square' 
-			onClick={props.onClick}>
-				{props.value}
-			</button>
-			)
-		}
-
-
-
-		return (
-			<div>
-				<div className='status'>{status}</div>
-				<div className='board-row'>
-					{renderSquare(0)}
-					{renderSquare(1)}
-					{renderSquare(2)}
-				</div>
-				<div className='board-row'>
-					{renderSquare(3)}
-					{renderSquare(4)}
-					{renderSquare(5)}
-				</div>
-				<div className='board-row'>
-					{renderSquare(6)}
-					{renderSquare(7)}
-					{renderSquare(8)}
-				</div>
-=======
-function Board() {
-    const [values, setValues] = useState(Array(9).fill(null))
-
-	const handleClick = (i) => {
-		const squares = values.slice()
-		squares[i] = 'X'
-		setValues(squares)
-	}
-
-    const renderSquare = (i) => {
-		return ( 
-		<Square 
-		value={values[i]}
-		onClick={() => handleClick(i)}/>
-		)
-	};
-
-    const Square = (props) => {
-        return (
-        <button className='square' 
-		onClick={() => props.onClick}>
-            {props.value}
-        </button>
-        )
-    }
-
-	const status = 'Next player: X';
-
->>>>>>> 09289043608d0f11068890f7d1f93cff90b9bff1
 	return (
 		<div>
 			<div className='status'>{status}</div>
@@ -158,20 +65,6 @@ function Board() {
 				{renderSquare(0)}
 				{renderSquare(1)}
 				{renderSquare(2)}
-<<<<<<< HEAD
-=======
-			</div>
-			<div className='board-row'>
-				{renderSquare(4)}
-				{renderSquare(3)}
-				{renderSquare(5)}
-			</div>
-			<div className='board-row'>
-				{renderSquare(6)}
-				{renderSquare(7)}
-				{renderSquare(8)}
->>>>>>> parent of aff3c60 (Adding moves control and winner determination)
->>>>>>> 09289043608d0f11068890f7d1f93cff90b9bff1
 			</div>
 			<div className='board-row'>
 				{renderSquare(4)}
