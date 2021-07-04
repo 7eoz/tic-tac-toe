@@ -1,0 +1,9 @@
+.game {
+	width: 12.5rem;
+	margin: 1.2rem auto;
+	list-style: none;
+}
+
+.game li {
+	margin: 1rem 2rem;
+}
